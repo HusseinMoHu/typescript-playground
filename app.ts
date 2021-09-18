@@ -1,7 +1,7 @@
 // You can change default values to any values you need
 enum Role {
   ADMIN = 100,
-  READ_ONLY = 200,
+  READ_ONLY = "READ",
   AUTHOR = 300,
 }
 
