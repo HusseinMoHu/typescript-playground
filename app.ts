@@ -4,6 +4,8 @@ enum Role {
   AUTHOR,
 }
 
+// By default admin=0, READ_ONLY=1, AUTHOR= 2
+
 let person = {
   name: "Maximilian",
   age: 30,
