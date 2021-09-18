@@ -1,8 +1,7 @@
-// You can change default values to any values you need
 enum Role {
-  ADMIN = 100,
-  READ_ONLY = "READ",
-  AUTHOR = 300,
+  ADMIN,
+  READ_ONLY,
+  AUTHOR,
 }
 
 let person = {
