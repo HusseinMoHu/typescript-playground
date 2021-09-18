@@ -12,6 +12,7 @@ let person = {
   name: "Maximilian",
   age: 30,
   hobbies: ["Sports", "Cooking"],
+  // role: ADMIN
   role: Role.ADMIN,
 };
 
@@ -21,6 +22,6 @@ for (const hobby of person.hobbies) {
   console.log(hobby);
 }
 
-if (person.role === Role.ADMIN) {
+if (person.role === /* ADMIN */ Role.ADMIN) {
   console.log("is admin");
 }
