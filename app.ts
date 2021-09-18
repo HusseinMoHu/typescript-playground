@@ -1,18 +1,16 @@
-const person = {
+let person: {
+  name: string;
+  age: 30;
+  hobbies: string[];
+  role: [number, string];
+} = {
   name: "Maximilian",
   age: 30,
   hobbies: ["Sports", "Cooking"],
+  role: [2, "author"],
 };
 
-// let favoriteActivities: any[];
-// favoriteActivities = ["Sports", 1];
+person.role.push("admin");
+// person.role[1] = 10; !! Error: due to tuple
 
-let favoriteActivities: string[];
-favoriteActivities = ["Sports", "Cooking"];
-
-console.log(person.name);
-
-for (const hobby of person.hobbies) {
-  console.log(hobby.toLowerCase());
-  // console.log(hobby.map());  !! Error: Ts knows that hobby is string can't use mapMethod
-}
+console.log(person);
