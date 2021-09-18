@@ -1,18 +1,26 @@
-let person: {
-  name: string;
-  age: 30;
-  hobbies: string[];
-  role: [number, string];
-} = {
+// const ADMIN = 0;
+// const READ_ONLY = 1;
+// const AUTHOR = 2;
+
+enum Role {
+  ADMIN,
+  READ_ONLY,
+  AUTHOR,
+}
+
+let person = {
   name: "Maximilian",
   age: 30,
   hobbies: ["Sports", "Cooking"],
-  role: [2, "author"],
+  role: Role.ADMIN,
 };
 
-person.role.push("admin"); // push has exception for no fuckin' reason!
-// person.role[1] = 10; !! Error: due to tuple
+console.log(person.name);
 
-person.role = [4, "admin"]; // this work fine. and respect tuple
+for (const hobby of person.hobbies) {
+  console.log(hobby);
+}
 
-console.log(person);
+if (person.role === Role.ADMIN) {
+  console.log("is admin");
+}
