@@ -10,7 +10,8 @@ function printResult(num: number) {
 
 printResult(add(1, 2));
 
-let someValue; // type: any
+let someValue: (a: number, b: number) => number; // func must have 2 params type-number and must return number
 someValue = add;
+// someValue = printResult; // Error!! printResult has no params and it's void-type not return number-type
 
-console.log(someValue(8, 8)); // type: any
+console.log(someValue(8, 8));
