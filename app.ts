@@ -1,7 +1,7 @@
 const combine = (
   input1: number | string,
   input2: number | string,
-  resultConversion: string
+  resultConversion: "as-number" | "as-text" // literal-type with union-type
 ) => {
   let result;
   if (
