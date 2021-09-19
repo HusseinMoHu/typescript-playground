@@ -9,3 +9,11 @@ userInput = "Hussein";
 if (typeof userInput === "string") {
   userName = userInput;
 }
+
+// never-type used in func return error || infinite-loop inside a func
+function generateError(message: string, code: number): never {
+  throw { message: message, errorCode: code };
+  // while(true) {}
+}
+
+generateError("An error occurred", 500);
