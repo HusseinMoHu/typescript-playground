@@ -1,10 +1,11 @@
-// Type Aliases Custom Types
+// Type Aliases - Custom Types
 type Combinable = number | string;
+type ConversionDescriptor = "as-number" | "as-text";
 
 const combine = (
   input1: Combinable,
   input2: Combinable,
-  resultConversion: "as-number" | "as-text"
+  resultConversion: ConversionDescriptor
 ) => {
   let result;
   if (
