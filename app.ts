@@ -1,6 +1,9 @@
+// Type Aliases Custom Types
+type Combinable = number | string;
+
 const combine = (
-  input1: number | string,
-  input2: number | string,
+  input1: Combinable,
+  input2: Combinable,
   resultConversion: "as-number" | "as-text"
 ) => {
   let result;
