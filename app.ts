@@ -4,12 +4,13 @@ function add(n1: number, n2: number) {
 }
 
 // Fun return void
-function printResult(num: number): undefined { // Error: func can't not allowed to return undefined
+function printResult(num: number) {
   console.log("Result: " + num);
 }
 
 printResult(add(1, 2));
 
-// variable allowed to undefined BUT func not
-let someValue: undefined;
-console.log(someValue); // undefined
+let someValue; // type: any
+someValue = add;
+
+console.log(someValue(8, 8)); // type: any
