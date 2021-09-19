@@ -31,3 +31,9 @@ let y: any[];
 // y = 1;               !! Error
 // y "string";          !! Error
 y = [1, "t", 55, true];
+
+/** any types
+ * use it ONLY when u have a variable with value u don't know it's type
+ * and us if-block to make checks.
+ * otherwise -> try to avoid using {any} type as possible as u can
+ */
