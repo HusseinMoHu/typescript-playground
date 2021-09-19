@@ -1,7 +1,7 @@
 const combine = (
   input1: number | string,
   input2: number | string,
-  resultConversion: "as-number" | "as-text" // literal-type with union-type
+  resultConversion: "as-number" | "as-text"
 ) => {
   let result;
   if (
@@ -14,12 +14,6 @@ const combine = (
   }
 
   return result;
-
-  // if (resultConversion === "as-number") {
-  //   return +result;
-  // } else {
-  //   return result.toString();
-  // }
 };
 
 const combinedAges = combine(30, 26, "as-number");
