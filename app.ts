@@ -8,4 +8,4 @@ function printResult(num: number) {
   console.log("Result: " + num);
 }
 
-printResult(add(1, 2));
+console.log(printResult(add(1, 2)));
