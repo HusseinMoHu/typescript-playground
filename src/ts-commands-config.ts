@@ -33,4 +33,6 @@
 // rootDir : "./src"                                        /* path to ts-files you want to compile them to /dist */
 // removeComments : true,                                   /* Disable emitting comments. */
 // noEmit : true,                                           /* just check ts-files. don't compile them to js-files */
-// "noEmitOnError": true                                    /* stop compilation if there is an error */
+// noEmitOnError : true                                     /* stop compilation if there is an error */
+// noImplicitThis : true,                                   /* ts ensure you use this-keyword right */
+// alwaysStrict : true                                      /* Emit "user strict" in js-files */
