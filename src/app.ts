@@ -1,7 +1,7 @@
 class Department {
   // private readonly id: string;
   // public name: string;
-  private employees: string[] = [];
+  protected employees: string[] = [];
 
   constructor(private readonly id: string, public name: string) {
     // this.id = id;
@@ -39,6 +39,13 @@ class Accounting extends Department {
     this.reports.push(report);
   }
 
+  addEmployee(name: string) {
+    if (name === "Max") {
+      return;
+    }
+    this.employees.push(name);
+  }
+
   printReports() {
     console.log(this.reports);
   }
@@ -54,6 +61,7 @@ console.log(it);
 console.log("#".repeat(70));
 
 const accounting = new Accounting("d1", ["firstReport"]);
+accounting.addEmployee("Tito");
 accounting.addReport("a");
 accounting.printReports();
 console.log(accounting);
