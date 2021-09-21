@@ -1,6 +1,9 @@
 interface Named {
   readonly name: string;
 }
+
+// interface can inherit from more than interface
+// BUT class can't inherit from more than class
 interface Greetable extends Named {
   greet(phrase: string): void;
 }
