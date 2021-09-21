@@ -1,4 +1,5 @@
 class Department {
+  static fiscalYear = 2021;
   // private readonly id: string;
   // public name: string;
   protected employees: string[] = [];
@@ -19,6 +20,10 @@ class Department {
   printEmployeesInfo() {
     console.log(`Employees number: ${this.employees.length}`);
     console.log(this.employees);
+  }
+
+  static createEmployee(name: string) {
+    return { name: name };
   }
 }
 
@@ -68,6 +73,8 @@ class Accounting extends Department {
   }
 }
 
+console.log("#".repeat(30), "ITDepartment Class", "#".repeat(30));
+
 const it = new ITDepartment("d1", ["Hussein", "Hatem"]);
 it.addEmployee("Max");
 it.addEmployee("Jon");
@@ -75,7 +82,7 @@ it.describe();
 it.printEmployeesInfo();
 console.log(it);
 
-console.log("#".repeat(70));
+console.log("#".repeat(30), "Accounting Class", "#".repeat(30));
 
 const accounting = new Accounting("d1", ["firstReport"]);
 accounting.addEmployee("Tito");
@@ -85,3 +92,10 @@ console.log(accounting.mostRecentReport); // getter
 accounting.printReports();
 accounting.mostRecentReport = "Year end report"; // setter
 console.log(accounting);
+
+console.log("#".repeat(30), "Static-keyword", "#".repeat(30));
+
+// static-keyword -> allowed access method & properties without instantiate-class(without new-keyword)
+// static properties & methods not available in this-keyword - it's not instance form the class
+const employee1 = Department.createEmployee("employeeOne");
+console.log(employee1, Department.fiscalYear);
