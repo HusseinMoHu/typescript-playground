@@ -7,27 +7,33 @@ let add: AddFn;
 add = (n1: number, n2: number) => n1 + n2;
 
 interface Named {
-  readonly name: string;
+  readonly name?: string;
 }
 
 interface Greetable extends Named {
   greet(phrase: string): void;
+  outPutName?: string;
 }
 
 class Person implements Greetable {
-  name: string;
-  age: number;
-  constructor(n: string, age: number) {
-    this.name = n;
-    this.age = age;
+  name?: string;
+  country = "Egypt";
+  constructor(n?: string) {
+    if (n) {
+      this.name = n;
+    }
   }
 
   greet(phrase: string) {
-    console.log(phrase + " " + this.name);
+    if (this.name) {
+      console.log(phrase + " " + this.name);
+    } else {
+      console.log("Hi");
+    }
   }
 }
 
 let hussein: Greetable;
-hussein = new Person("Hussein", 24);
+hussein = new Person();
 hussein.greet("Hi every one - I am");
 console.log(hussein);
