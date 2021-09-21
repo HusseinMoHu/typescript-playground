@@ -79,9 +79,9 @@ console.log("#".repeat(70));
 
 const accounting = new Accounting("d1", ["firstReport"]);
 accounting.addEmployee("Tito");
-console.log(accounting.mostRecentReport);
+console.log(accounting.mostRecentReport); // getter
 accounting.addReport("a");
-console.log(accounting.mostRecentReport);
+console.log(accounting.mostRecentReport); // getter
 accounting.printReports();
-accounting.mostRecentReport = "Year end report";
+accounting.mostRecentReport = "Year end report"; // setter
 console.log(accounting);
