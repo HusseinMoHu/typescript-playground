@@ -1,9 +1,15 @@
+// type AddFn = (a: number, b: number) => number;
+interface AddFn {
+  (a: number, b: number): number;
+}
+
+let add: AddFn;
+add = (n1: number, n2: number) => n1 + n2;
+
 interface Named {
   readonly name: string;
 }
 
-// interface can inherit from more than interface
-// BUT class can't inherit from more than class
 interface Greetable extends Named {
   greet(phrase: string): void;
 }
