@@ -1,17 +1,17 @@
-class Department {
+// Abstract-class enforce different implementation for abstract-method in each class inherits from it.
+// you can't instantiate abstract-class, it's just a class that's there to be inherited from.
+abstract class Department {
   static fiscalYear = 2021;
   // private readonly id: string;
   // public name: string;
   protected employees: string[] = [];
 
-  constructor(private readonly id: string, public name: string) {
+  constructor(protected readonly id: string, public name: string) {
     // this.id = id;
     // this.name = n;
   }
 
-  describe(this: Department) {
-    console.log(`Department ${this.id}: ${this.name}`);
-  }
+  abstract describe(this: Department): void;
 
   addEmployee(employee: string) {
     this.employees.push(employee);
@@ -32,6 +32,10 @@ class ITDepartment extends Department {
   constructor(id: string, admins: string[]) {
     super(id, "IT");
     this.admins = admins;
+  }
+
+  describe() {
+    console.log("ITDepartment ID: " + this.id);
   }
 }
 
@@ -54,6 +58,10 @@ class Accounting extends Department {
   constructor(id: string, private reports: string[]) {
     super(id, "Accounting");
     this.lastReport = reports[reports.length - 1];
+  }
+
+  describe() {
+    console.log("Accounting department ID: " + this.id);
   }
 
   addReport(report: string) {
@@ -85,6 +93,7 @@ console.log(it);
 console.log("#".repeat(30), "Accounting Class", "#".repeat(30));
 
 const accounting = new Accounting("d1", ["firstReport"]);
+accounting.describe();
 accounting.addEmployee("Tito");
 console.log(accounting.mostRecentReport); // getter
 accounting.addReport("a");
