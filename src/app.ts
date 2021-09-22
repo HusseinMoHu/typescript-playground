@@ -1,6 +1,6 @@
 type Admin = {
   name: string;
-  privilege: string[];
+  privileges: string[];
 };
 
 type Employee = {
@@ -13,7 +13,7 @@ type ElevatedEmployee = Admin & Employee;
 
 const e1: ElevatedEmployee = {
   name: "Hussein",
-  privilege: ["Create", "Read", "Update", "Delete"],
+  privileges: ["Create", "Read", "Update", "Delete"],
   startDate: new Date(),
 };
 
@@ -21,3 +21,12 @@ type Combinable = string | number;
 type Numerical = number | boolean;
 
 type Universal = Combinable & Numerical;
+
+function sum(a: Combinable, b: Combinable) {
+  // Type Guard => typeof
+  if (typeof a === "string" || typeof b === "string") {
+    return a.toString() + b.toString();
+  }
+
+  return a + b;
+}
